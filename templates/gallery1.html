@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+ .navbar {
+      margin: 0px;
+      border-radius: 0;
+      background-color: #4d4d4d;
+      padding-bottom:0px;
+    }
+     .jumbotron {
+      margin-bottom: 0;
+      background-color: black;
+      padding: 0;}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+/* Position the navbar container inside the image */
+.container {
+  position:top;
+  margin: 20px;
+  width:100%;
+}
+
+/* The navbar */
+.column {
+  margin-left: 15px;
+  float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    padding: 10px;
+
+}
+.hero-text{
+  background-image: url('{%static "images/gal.jpg"%}');
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+</style>
+</head>
+<body>
+<div class="hero-image">
+	<div class="bg-img">
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li ><a href="{% url 'about1' %}">About</a></li>
+        <li><a href="{% url 'hotels1' %}">Hotels</a></li>
+        <li><a href="{% url 'package1' %}">Packages</a></li>
+        <li  class="active"><a href="{% url 'gallery1' %}">Gallery</a></li>
+        <li><a href="{% url 'snippet_detail' %}">Booking</a></li>
+        <li class="nav navbar-nav navbar-right">
+     
+  
+        {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+      {% else %}
+         <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+       {% endif %}
+       
+  </li>
+        </ul>
+    </div>
+  </div>
+</nav> 
+	</div>
+  <div class="hero-text">
+    <h1 style="font-size:50px padding:0px;">Gallery</h1>
+    <p>Home->Gallery</p>
+    
+  </div>
+</div>
+<br>
+
+<div class="container">
+
+  <div class="row" >
+    <div class="col-md-4">
+                <img src="{% static 'images/image1.jpg'%}" alt="Lights" width="360px" height="250px">
+          </div>
+    <div class="col-md-4">
+                <img src="{% static 'images/image2.jpg'%}" alt="Nature" width="360px" height="250px">
+          </div>
+    <div class="col-md-4">
+                <img src="{% static 'images/image3.jpg'%}" alt="Fjords" width="360px" height="250px">
+          </div>
+  </div>
+   <div class="row">
+    <div class="col-md-4">
+                <img src="{% static 'images/image4.jpg'%}" alt="Lights" width="360px" height="250px">
+          </div>
+    <div class="col-md-4">
+      
+          <img src="{% static 'images/image5.jpg'%}" alt="Nature" width="360px" height="250px">
+      
+    </div>
+    <div class="col-md-4">
+          <img src="{% static 'images/image6.jpg'%}" alt="Fjords" width="360px" height="250px">
+      
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-md-4">
+      
+          <img src="{% static 'images/image7.jpg'%}" alt="Lights" width="360px" height="250px">
+      
+    </div>
+    <div class="col-md-4">
+      
+          <img src="{% static 'images/image8.jpg'%}" alt="Nature" width="360px" height="250px">
+      
+    </div>
+    <div class="col-md-4">
+    
+          <img src="{% static 'images/image9.jpg'%}" alt="Fjords" width="360px" height="250px">
+      
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

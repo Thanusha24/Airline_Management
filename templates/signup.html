@@ -1,0 +1,16 @@
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+
+  </form>
+  <br>
+  	<h1>Already a user</h1><a href="{% url 'login' %}"><font color = "#2768d1"><span class="glyphicon glyphicon-log-in btn btn-success">&nbspLogin</span> </font></a></h1>
+{% endblock %}

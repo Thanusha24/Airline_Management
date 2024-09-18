@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+body {
+
+  font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+ .navbar {
+      margin: 0px;
+      border-radius: 0;
+      background-color: #4d4d4d
+    }
+.jumbotron {
+      margin-bottom: 0;
+      background-color: black;
+      padding: 0;}
+
+.bg-img{
+  /* The image used */
+  background-image: url('{% static "images/flights.jpg" %}');
+
+  min-height: 540px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  position:top;
+  margin: 20px;
+  width: 100%;
+}
+h3{
+font-size: 30px;
+
+}
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 280px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.hero-text{
+  background-image: url('{%static "images/about-img.jpg"%}');
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+</style>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li  class="active"><a href="{% url 'about1' %}">About</a></li>
+        <li><a href="{% url 'hotels1' %}">Hotels</a></li>
+        <li><a href="{% url 'package1' %}">Packages</a></li>
+        <li><a href="{% url 'gallery1' %}">Gallery</a></li>
+        <li><a href="{% url 'snippet_detail' %}">Booking</a></li>
+        <li class="nav navbar-nav navbar-right">
+     
+  
+        {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+      {% else %}
+         <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+       {% endif %}
+       
+  </li>
+        </ul>
+    </div>
+  </div>
+</nav>
+  <div class="hero-text">
+    <h1 style="font-size:50px">About Us</h1>
+    <p>Home->About Us</p>
+    
+  </div>
+</div>
+<br><br><br>
+<br>
+<div>
+<div class="container" style="background-color:#87ceeb;">
+<img src="{% static 'images/info-img.jpeg'%}" width="20%" align="left"><br>
+</img>
+<h1 align="center" color="white"><b>Who Are We?</b></h1>
+<p display="inline-block"><font size="4">Travelicious... a destination for all people who love to travel<br>
+						        Here we provide information on what to do and where to stay and helps you choose your travel destinations.
+								This is the perfect place to find deals and new destinations.</font></p><br>
+
+
+</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="img_5terre.jpg">
+    <img src="{% static 'images/o1.jpg'%}" alt="5Terre" width="600" height="400">
+  </a>
+  <div class="desc panel-footer">
+  <h3>Rent a Car</h3>
+  <p>Book your own car for your travel at an affordable rate</p>
+  </div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_forest.jpg">
+    <img src="{% static 'images/o2.jpg'%}" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc panel-footer">
+  <h3>Bus Services</h3>
+  <p>Ride on the most pocket-friendly and pollution-free vehicles</p>
+  </div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_lights.jpg">
+    <img src="{% static 'images/o3.jpg'%}" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc panel-footer">
+  <h3>To Do List</h3>
+  <p>The following article covers a plan of your travel</p></div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_mountains.jpg">
+    <img src="{% static 'images/o4.jpg'%}" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc panel-footer">
+  <h3>Food Features</h3>
+  <p>Get the food across the world</p>
+  </div>
+</div>
+
+
+
+</body>
+</html>
